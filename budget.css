@@ -1,0 +1,120 @@
+body {
+    font-family: var(--bodyFont), sans-serif; /* Fallback to sans-serif */
+    margin: 0;
+    padding: 0;
+}
+/*-- -------------------------- -->
+<---       Calculator           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #calculator-001 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Horizontally centers content */
+        align-items: center;
+        padding: clamp(7.25rem, 16.82vw, 10.25rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
+    }
+    #calculator-001 .cs-calulator-results {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px; 
+    }
+    #calculator-001 .cs-title{
+         /* 39px - 61px */
+        font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+        line-height: 1.2em;
+        text-align: center;
+        position: relative;
+    }
+    #calculator-001 .cs-calculator {
+        background: #F3EFE9;
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box; 
+    }
+
+    #calculator-001 .form-subheader {
+        font-size: 16px;
+    }
+
+    #calculator-001 form label {
+        display: block;
+        font-size: 14px;
+        margin: 10px 0 5px;
+    }
+
+    #calculator-001 form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #calculator-001 button {
+        width: 100%;
+        background-color: #0f467c;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        padding: 12px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    #calculator-001 button:hover {
+        background-color: #3d9c78;
+    }
+
+    #calculator-001 #results {
+        border: 1px solid #ddd;
+        width: 100%;
+    }
+    #calculator-001 .home-price{
+        background-color: var(--headerColor);
+        color: white;
+        padding: 20px 24px;
+        width: 100%;
+    }
+    #calculator-001 h2{
+        margin: 0;
+        padding-bottom: 30px;
+    }
+    #calculator-001 h3{
+        text-decoration: underline;
+        margin: 0;
+        padding: 20px 0;
+        font-size: 16px;
+        font-weight: 900;
+    }
+    #calculator-001 .other-results{
+        font-weight: 400;
+        padding: 24px;
+        color: var(--headerColor);
+        width: 100%;
+    }
+    #calculator-001 .other-results-row{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #calculator-001 .bold-row{
+        font-weight: 700;
+    }
+    #calculator-001 #max-home-price{
+        font-size: 28px;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #calculator-001 .cs-calculator-results {
+        flex-direction: row;
+        justify-content: center; /* Horizontally centers content */
+        align-items: start ;
+    }
+}

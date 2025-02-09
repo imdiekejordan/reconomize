@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Home Affordability Calculator</title>
+    <link rel="stylesheet" href="core-style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="budget.css">
+</head>
+    <body>   
+    <header id="cs-navigation">
+        <div class="cs-container">
+            <!--Nav Logo-->
+            <a href="" class="cs-logo" aria-label="back to home">
+                <img src="Finance-Illustrations/Group 1 (1).png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+            </a>
+            <!--Navigation List-->
+            <nav class="cs-nav" role="navigation">
+                <!--Mobile Nav Toggle-->
+                <button class="cs-toggle" aria-label="mobile menu toggle">
+                    <div class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1" aria-hidden="true"></span>
+                        <span class="cs-line cs-line2" aria-hidden="true"></span>
+                        <span class="cs-line cs-line3" aria-hidden="true"></span>
+                    </div>
+                </button>
+                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+                <div class="cs-ul-wrapper">
+                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                        <li class="cs-li">
+                            <a href="" class="cs-li-link cs-active">
+                                Home
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="" class="cs-li-link">
+                                Plan
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="" class="cs-li-link">
+                                Save
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="" class="cs-li-link">
+                                Buy
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="" class="cs-li-link">
+                                FAQ
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="" class="cs-li-link">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        
+        </div>
+    </header>
+    <section id="calculator-001">
+        <h1 class="cs-title">How Much Home Can I Afford?</h1>
+        <p class="cs-text">
+            Find what you can afford and how to plan for the future with your best financial foot foward.
+        </p>
+        <div class="cs-calculator-results">
+            <div id="results">
+                <div class="home-price">
+                    <h2>Estimated Home Price</h2>
+                    <span id="max-home-price">$401,699</span>
+                </div>
+                <div class="other-results">
+                    <div class="other-results-row bold-row">
+                        <p>Closing Costs</p>
+                        <p><span id="bottom-closing-cost">$8,034</span><span id="top-closing-cost"> - $20,085</span></p>
+                    </div> 
+                    <div class="other-results-row bold-row">
+                        <p>Loan Needed</p>
+                        <span id="loan-required">$341,699</span>
+                    </div>
+                    <h3>Monthly Home Expenses</h3>
+                    <div class="other-results-row">
+                        <p>Principal & Interest</p>
+                        <span id="monthly-payment">$0</span>
+                    </div>
+                    <div class="other-results-row">
+                        <p>Propety Taxes</p>
+                        <span id="property-taxes">$0</span>
+                    </div>
+                    <div class="other-results-row">
+                        <p>Homeowners Insurance</p>
+                        <span id="homeowners-insurance">$0</span>
+                    </div>
+                    <div class="other-results-row">
+                        <p>HOA Fee</p>
+                        <span id="hoa-fee">$0</span>
+                    </div>
+                    <div class="other-results-row bold-row">
+                        <p>Total</p>
+                        <span id="total">$0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cs-calculator">
+                <form id="affordability-form">
+                    <h4 class="form-subheader">Your Info</h4>
+                    <label for="income">Annual Net Income</label>
+                    <input type="number" id="income" value="100000" required>
+
+                    <label for="debts">Debt Payments (monthly)</label>
+                    <input type="number" id="debts" value="500" required>
+                    
+                    <h4 class="form-subheader">Loan Info</h4>
+                    <label for="down-payment">Down Payment</label>
+                    <input type="number" id="down-payment" value="60000" required>
+
+                    <label for="loan-term">Loan Term (Years):</label>
+                    <input type="number" id="loan-term" value="30" required>
+
+                    <label for="interest-rate">Interest Rate (%)</label>
+                    <input type="number" id="interest-rate" value="7.00"  required>
+
+                    <label for="property-tax">Property Tax Rate (%)<label>
+                    <input type="number" id="property-tax" value="1.2" required>
+
+                    <label for="insurance">Homeowners Insurance (yearly)</label>
+                    <input type="number" id="insurance" value="1200" required>
+
+                    <label for="insurance">HOA Fee (monthly)</label>
+                    <input type="number" id="hoa-fee-input" value="0" required>
+
+                    <button type="button" onclick="calculateAffordability()">CALCULATE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
